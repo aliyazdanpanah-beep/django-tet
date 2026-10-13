@@ -8,3 +8,6 @@ def agust(request):
 
 def sep(request):
     return HttpResponse("Its, September page")
+
+def march(request):
+    return HttpResponse("Its, March page")
