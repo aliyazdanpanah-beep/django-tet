@@ -16,3 +16,7 @@ def handel_month(reguest, month):
         return HttpResponseNotFound("This month is not supported")
 
     return HttpResponse(challeng_text)
+
+
+def handel_month_by_number(request, month):
+    return HttpResponse(month)
