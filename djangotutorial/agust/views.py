@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.http import HttpResponse, HttpResponseNotFound
+from django.http import HttpResponse, HttpResponseNotFound, HttpResponseRedirect
 
 # Dynamic URLs insted astatic URLs
 
@@ -20,4 +20,10 @@ def handel_month(reguest, month):
 
 
 def handel_month_by_number(request, month):
-    return HttpResponse(month)
+    months = list(challeng_text.keys())
+
+    if month > len(months):
+        return HttpResponseNotFound("Invalid month")
+    redirect_months = months[month - 1]
+
+    return HttpResponseRedirect("/agust/" + redirect_months)
